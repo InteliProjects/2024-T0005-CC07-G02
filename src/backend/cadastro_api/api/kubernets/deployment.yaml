@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cadastro-api
+spec:
+  selector:
+    matchLabels:
+      app: cadastro-api
+  template:
+    metadata:
+      labels:
+        app: cadastro-api
+    spec:
+      containers:
+      - name: cadastro-api
+        image: vivinhocc/vivinho:cadastro_service # mudar para a imagem que você criou
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 80

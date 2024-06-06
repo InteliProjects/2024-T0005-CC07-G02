@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # mysql:
+  #   image: mysql:latest
+  #   container_name: mysql_db
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: rootpassword1  # Senha do usuário root do MySQL
+  #     MYSQL_DATABASE: internet_api        # Nome do banco de dados para criar automaticamente
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  internet_planos:
+    build: ./
+    container_name: internet_planos
+    restart: always
+    ports:
+      - "80:80"
+       
+
+# volumes:
+#   mysql_data:

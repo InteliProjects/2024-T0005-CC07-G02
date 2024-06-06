@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: outros-produtos
+spec:
+  selector:
+    matchLabels:
+      app: outros-produtos
+  template:
+    metadata:
+      labels:
+        app: outros-produtos
+    spec:
+      containers:
+      - name: outros-produtos
+        image: vivinhocc/vivinho:outros_service
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 80

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telefonia-api
+spec:
+  selector:
+    matchLabels:
+      app: telefonia-api
+  template:
+    metadata:
+      labels:
+        app: telefonia-api
+    spec:
+      containers:
+      - name: telefonia-api
+        image: vivinhocc/vivinho:telefonia_service
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 80

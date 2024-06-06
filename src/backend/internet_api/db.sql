@@ -1,0 +1,16 @@
+CREATE TABLE PLANOS (
+  ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  Tipo_servico VARCHAR(50) NOT NULL CHECK (Tipo_servico IN ('Internet Residencial', 'Internet Empresarial')),
+  Descricao VARCHAR(255) NOT NULL,
+  Preco DECIMAL(10,2) NOT NULL,
+  Velocidade_Contratada INT NOT NULL
+);
+
+CREATE TABLE SERVICOS_CONTRATADOS (
+  ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  ID_Plano INT NOT NULL,
+  ID_Cliente INT NOT NULL,
+  Data_Contratacao DATE NOT NULL,
+  Data_Cancelamento DATE,
+  FOREIGN KEY (ID_Plano) REFERENCES PLANOS(ID)
+);

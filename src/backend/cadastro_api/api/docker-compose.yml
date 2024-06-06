@@ -1,0 +1,9 @@
+version: '3.7'
+
+services: 
+  cadastro: 
+    build: ./
+    container_name: cadastro
+    restart: always
+    ports: 
+      - "80:80"

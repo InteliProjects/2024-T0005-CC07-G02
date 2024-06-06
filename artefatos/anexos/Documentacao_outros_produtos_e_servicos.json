@@ -1,0 +1,931 @@
+{
+	"info": {
+		"_postman_id": "4e971189-d42c-4d9f-b112-86b2181de12a",
+		"name": "Artefato",
+		"description": "Esta coleção contém uma série de requisições configuradas para testar com sucesso um backend hospedado em uma instância EC2 na AWS. As requisições GET, POST, PUT e DELETE foram projetadas para verificar a funcionalidade e integridade do servidor, garantindo que ele responda corretamente e execute operações CRUD básicas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23794526"
+	},
+	"item": [
+		{
+			"name": "Planos",
+			"item": [
+				{
+					"name": "GET /planos/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								""
+							]
+						},
+						"description": "- **GET - Obter todos os planos**\n    - Retorna todos os planos disponíveis."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"plans",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:10:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "334"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"descricao\": \"Descrição do Plano Teste 2\",\n            \"id\": \"0704c838-4465-4884-b593-27907d9a07d4\",\n            \"nome_do_plano\": \"Plano Teste 2\",\n            \"valor\": \"10.00\"\n        },\n        {\n            \"descricao\": \"Descrição do Plano Teste\",\n            \"id\": \"c9434eeb-da77-42d5-ac93-ff0579642254\",\n            \"nome_do_plano\": \"Plano Teste\",\n            \"valor\": \"100.00\"\n        }\n    ],\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET /planos/{plan_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/0704c838-4465-4884-b593-27907d9a07d4",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"0704c838-4465-4884-b593-27907d9a07d4"
+							]
+						},
+						"description": "- **GET - Obter plano por ID**\n    \n    - Retorna um plano específico com base no ID fornecido."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/{plan_id}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/0704c838-4465-4884-b593-27907d9a07d4",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"plans",
+										"0704c838-4465-4884-b593-27907d9a07d4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:34:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"descricao\": \"Descrição do Plano Teste 2\",\n        \"id\": \"0704c838-4465-4884-b593-27907d9a07d4\",\n        \"nome_do_plano\": \"Plano Teste 2\",\n        \"valor\": \"10.00\"\n    },\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET /planos/{plan_name}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/Plano Teste 2",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"Plano Teste 2"
+							]
+						},
+						"description": "- **GET - Obter plano pelo nome do plano**\n    \n    - Retorna um plano específico com base no nome do plano fornecido."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans{service_type}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/Plano Teste 2",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"plans",
+										"Plano Teste 2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:34:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "182"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"descricao\": \"Descrição do Plano Teste 2\",\n        \"id\": \"0704c838-4465-4884-b593-27907d9a07d4\",\n        \"nome_do_plano\": \"Plano Teste 2\",\n        \"valor\": \"10.00\"\n    },\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE /planos/{plan_id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/c9434eeb-da77-42d5-ac93-ff0579642254",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"c9434eeb-da77-42d5-ac93-ff0579642254"
+							]
+						},
+						"description": "- **DELETE - Excluir um plano existente**\n    \n    - Remove um plano existente com base no ID fornecido."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans{plan_id}",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/c9434eeb-da77-42d5-ac93-ff0579642254",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"plans",
+										"c9434eeb-da77-42d5-ac93-ff0579642254"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:45:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Plan deleted successfully\",\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "POST /planos/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome_do_plano\": \"Teste\",\n    \"descricao\": \"Descrição do Plano Teste 3\",\n    \"valor\": 15.00\n}"
+						},
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								""
+							]
+						},
+						"description": "- **POST - Criar um novo plano**\n    \n    - Cria um novo plano com os detalhes fornecidos."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome_do_plano\": \"Teste\",\n    \"descricao\": \"Descrição do Plano Teste 3\",\n    \"valor\": 15.00\n}"
+								},
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"plans",
+										""
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:44:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "165"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"descricao\": \"Descrição do Plano Teste 3\",\n        \"nome_do_plano\": \"Teste\",\n        \"valor\": 15\n    },\n    \"message\": \"Plan created successfully\",\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PUT /planos/{plan_id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome_do_plano\": \"Novo Nome do Plano\",\n    \"descricao\": \"Nova Descrição do Plano\",\n    \"valor\": 150.00\n  }"
+						},
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/c9434eeb-da77-42d5-ac93-ff0579642254",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"plans",
+								"c9434eeb-da77-42d5-ac93-ff0579642254"
+							]
+						},
+						"description": "- **PUT - Atualizar um plano existente**\n    \n    - Atualiza os detalhes de um plano existente com base no ID fornecido."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans{plan_id}",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome_do_plano\": \"Novo Nome do Plano\",\n    \"descricao\": \"Nova Descrição do Plano\",\n    \"valor\": 150.00\n  }"
+								},
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/plans/c9434eeb-da77-42d5-ac93-ff0579642254",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"plans",
+										"c9434eeb-da77-42d5-ac93-ff0579642254"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:44:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "222"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"descricao\": \"Nova Descrição do Plano\",\n        \"id\": \"c9434eeb-da77-42d5-ac93-ff0579642254\",\n        \"nome_do_plano\": \"Novo Nome do Plano\",\n        \"valor\": 150\n    },\n    \"message\": \"Plan updated successfully\",\n    \"status\": \"success\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Esta pasta contém testes relacionados à manipulação de planos no backend hospedado na EC2 da AWS. Os testes dentro desta pasta visam garantir a funcionalidade correta do CRUD para os planos."
+		},
+		{
+			"name": "Serviços Contratados",
+			"item": [
+				{
+					"name": "GET /servicos_contratados/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								""
+							]
+						},
+						"description": "- **GET - Obter todos os serviços contratados**\n    \n    - Retorna todos os serviços contratados."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"services",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:47:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "271"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"data_cancelamento\": null,\n            \"data_contratacao\": \"2024-02-17\",\n            \"data_vencimento\": \"20\",\n            \"id\": \"e0d62814-08fa-4029-a467-0b283468c0cd\",\n            \"id_cliente\": \"00000000-0000-0000-0000-000000000000\",\n            \"id_plano\": \"0704c838-4465-4884-b593-27907d9a07d4\"\n        }\n    ],\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GET /servicos_contratados/{service_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/e0d62814-08fa-4029-a467-0b283468c0cd",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								"e0d62814-08fa-4029-a467-0b283468c0cd"
+							]
+						},
+						"description": "- **GET - Obter serviço contratado por ID**\n    \n    - Retorna um serviço contratado específico com base no ID fornecido."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/{service_id}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/e0d62814-08fa-4029-a467-0b283468c0cd",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"services",
+										"e0d62814-08fa-4029-a467-0b283468c0cd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:49:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "269"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data_cancelamento\": null,\n        \"data_contratacao\": \"2024-02-17\",\n        \"data_vencimento\": \"25\",\n        \"id\": \"e0d62814-08fa-4029-a467-0b283468c0cd\",\n        \"id_cliente\": \"00000000-0000-0000-0000-000000000000\",\n        \"id_plano\": \"0704c838-4465-4884-b593-27907d9a07d4\"\n    },\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE /servicos_contratados/{service_id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/e0d62814-08fa-4029-a467-0b283468c0cd",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								"e0d62814-08fa-4029-a467-0b283468c0cd"
+							]
+						},
+						"description": "- **DELETE - Excluir um serviço contratado existente**\n    \n    - Remove um serviço contratado existente com base no ID fornecido."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services{service_id}",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/e0d62814-08fa-4029-a467-0b283468c0cd",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"services",
+										"e0d62814-08fa-4029-a467-0b283468c0cd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:49:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Service deleted successfully\",\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "POST /servicos_contratados/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_cliente\": \"00000000-0000-0000-0000-000000000000\",\n    \"id_plano\": \"0704c838-4465-4884-b593-27907d9a07d4\",\n    \"data_contratacao\": \"2024-02-17\",\n    \"data_vencimento\": \"20\"\n  }"
+						},
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								""
+							]
+						},
+						"description": "- **POST - Criar um novo serviço contratado**\n    \n    - Cria um novo serviço contratado com os detalhes fornecidos."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id_cliente\": \"00000000-0000-0000-0000-000000000000\",\n    \"id_plano\": \"0704c838-4465-4884-b593-27907d9a07d4\",\n    \"data_contratacao\": \"2024-02-17\",\n    \"data_vencimento\": \"20\"\n  }"
+								},
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"services",
+										""
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:47:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "239"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data_contratacao\": \"2024-02-17\",\n        \"data_vencimento\": \"20\",\n        \"id_cliente\": \"00000000-0000-0000-0000-000000000000\",\n        \"id_plano\": \"0704c838-4465-4884-b593-27907d9a07d4\"\n    },\n    \"message\": \"Service created successfully\",\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PUT /servicos_contratados/{service_id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data_vencimento\": \"25\"\n}"
+						},
+						"url": {
+							"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/e0d62814-08fa-4029-a467-0b283468c0cd",
+							"protocol": "http",
+							"host": [
+								"ec2-54-208-184-240",
+								"compute-1",
+								"amazonaws",
+								"com"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"services",
+								"e0d62814-08fa-4029-a467-0b283468c0cd"
+							]
+						},
+						"description": "- **PUT - Atualizar um serviço contratado existente**\n    \n    - Atualiza os detalhes de um serviço contratado existente com base no ID fornecido."
+					},
+					"response": [
+						{
+							"name": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services{service_id}",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data_vencimento\": \"25\"\n}"
+								},
+								"url": {
+									"raw": "http://ec2-54-208-184-240.compute-1.amazonaws.com:3000/api/services/e0d62814-08fa-4029-a467-0b283468c0cd",
+									"protocol": "http",
+									"host": [
+										"ec2-54-208-184-240",
+										"compute-1",
+										"amazonaws",
+										"com"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"services",
+										"e0d62814-08fa-4029-a467-0b283468c0cd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.1 Python/3.10.12"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 17:48:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "236"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data_cancelamento\": null,\n        \"data_contratacao\": null,\n        \"data_vencimento\": \"25\",\n        \"id\": \"e0d62814-08fa-4029-a467-0b283468c0cd\",\n        \"id_cliente\": null,\n        \"id_plano\": null\n    },\n    \"message\": \"Service updated successfully\",\n    \"status\": \"success\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Esta pasta contém testes relacionados à manipulação de serviços oferecidos pelo backend hospedado na EC2 da AWS. Os testes nesta pasta são projetados para garantir que os serviços possam ser gerenciados adequadamente, incluindo criação, listagem, atualização e exclusão dos serviços contratados."
+		}
+	]
+}

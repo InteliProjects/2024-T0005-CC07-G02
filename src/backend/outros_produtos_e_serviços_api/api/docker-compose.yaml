@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  outros_produtos_e_servicos:
+    build: ./
+    container_name: outros_produtos_e_servicos
+    restart: always
+    ports:
+      - "80:80"

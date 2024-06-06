@@ -1,0 +1,1 @@
+CREATE DATABASE IF NOT EXISTS outros_produtos_e_servicos;

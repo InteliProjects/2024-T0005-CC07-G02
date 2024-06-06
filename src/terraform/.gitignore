@@ -1,0 +1,27 @@
+# Diretório .terraform que pode conter arquivos de estado locais e plugins
+**/.terraform/*
+
+# Arquivos de configuração de workspace
+terraform.tfstate
+terraform.tfstate.backup
+
+# Arquivos de log
+crash.log
+
+# Arquivos .tfvars que podem conter dados sensíveis
+*.tfvars
+*.tfvars.json
+
+# Arquivos de saída do plano do Terraform
+*.tfplan
+*.tfplan.json
+
+# Ignorar todos os arquivos override
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Excluir arquivos de configuração do CLI
+.terraformrc
+terraform.rc

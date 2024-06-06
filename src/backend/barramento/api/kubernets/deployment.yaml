@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: barramento-api
+spec:
+  selector:
+    matchLabels:
+      app: barramento-api
+  template:
+    metadata:
+      labels:
+        app: barramento-api
+    spec:
+      containers:
+      - name: barramento-api
+        image: vivinhocc/vivinho:barramento_service
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 80

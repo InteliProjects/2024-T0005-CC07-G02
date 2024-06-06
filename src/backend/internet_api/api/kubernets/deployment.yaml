@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internet-api
+spec:
+  selector:
+    matchLabels:
+      app: internet-api
+  template:
+    metadata:
+      labels:
+        app: internet-api
+    spec:
+      containers:
+      - name: internet-api
+        image: vivinhocc/vivinho:internet_service
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 80

@@ -1,0 +1,9 @@
+version: '3.7'
+
+services: 
+  fatura: 
+    build: ./
+    container_name: telefonia
+    restart: always
+    ports: 
+      - "80:80"

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fatura-api
+spec:
+  selector:
+    matchLabels:
+      app: fatura-api
+  template:
+    metadata:
+      labels:
+        app: fatura-api
+    spec:
+      containers:
+      - name: fatura-api
+        image: vivinhocc/vivinho:fatura_service
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        ports:
+        - containerPort: 80

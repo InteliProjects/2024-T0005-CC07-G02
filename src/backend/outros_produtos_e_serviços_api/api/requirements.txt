@@ -1,0 +1,10 @@
+flask
+pathlib
+python-dotenv
+PyJWT
+Flask-SQLAlchemy
+Flask-Migrate
+flask-bcrypt
+flask_jwt_extended
+pymysql
+cryptography
