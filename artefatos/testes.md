@@ -552,7 +552,7 @@ A imagem abaixo representa o resultado da execução dos testes unitários para 
 Esta documentação abrange os testes de integração realizados entre a API de Planos de Internet e o banco de dados relacionado. Os testes foram executados utilizando o Postman para garantir que as interações entre o backend e o banco de dados estejam integradas e funcionando conforme esperado.
 
 ## Configuração do Ambiente
-- Headers necessários: Em *Authorization* configurar *Bearer Token* e colocar um token JWT. Exemplo de token JWT: *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidXNlcl9pZCI6IjBmNGY4N2U3LTY1MDUtNDkzNy04ZWUxLTljMjViOWQ5ZjQyMyIsIm5hbWUiOiJKb255ZSIsImlhdCI6MTUxNjIzOTAyMn0.beJ4a542V3tfXeSiptaETkPK3OkdjvgVg6G0rFnRBdE*
+- Headers necessários: Em *Authorization* configurar *Bearer Token* e colocar um token JWT.
 
 ## Casos de Teste
 
